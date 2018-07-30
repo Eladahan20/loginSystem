@@ -11,5 +11,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/main.css" />
     <!-- <script src="main.js"></script> -->
 </head>
+<div class="sticky-nav text-right pt-2 pr-2">
+    <a href="index.php">Home</a>
+    |
+    <a href="login.php">Login</a>
+</div>
+
+
+
 
     
