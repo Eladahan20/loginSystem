@@ -1,24 +1,37 @@
 <?php
-//API IMPLEMENTATION
 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 include_once('cardentials.php');
+
+//Logout system
+if (isset($_SESSION['authenticated'])) {
+  $_SESSION = array();    
+  session_destroy();
+}
+
+//API implementation
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
+        $_SESSION['lasttry']=$_POST['username'];
         if ($_POST['username'] == USERNAME && $_POST['password'] == PASSWORD) {
-            session_start();
             $_SESSION['authenticated'] = true;
+            http_response_code(200);
             header('Content-Type: application/json');
             echo json_encode($user);
             exit();
     } else {
-      header('Content-Type: application/json');
+      http_response_code(400);
       echo json_encode($error);
       exit();
     }
 }
 }
 include_once('header.php');
+
+
 
 
 ?>
