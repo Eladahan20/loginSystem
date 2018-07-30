@@ -23,7 +23,7 @@ include_once('header.php');
 <div class="maindiv text-center" cz-shortcut-listen="true">
     <form class="form-signin" action="forgot-password.php" method="post">
       <h1 class="h3 mb-3 font-weight-normal">Retrieve Password</h1>
-      <small >Enter your email address and we will retrive your lost password.</small>
+      <small >Enter your email address and we will retrieve your lost password.</small>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" name="username" id="inputEmail" class="form-control mt-2" placeholder="Email address" required="" autofocus="">
       <button class="btn btn-lg btn-dark btn-block mt-4" type="submit">Retrive</button>
